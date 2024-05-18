@@ -21,4 +21,4 @@ model User {
   password  String
   avatar    String?
   createdAt DateTime @default(now())
-}
+}   

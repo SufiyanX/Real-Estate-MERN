@@ -51,15 +51,12 @@ export const login = async (req, res) => {
         maxAge: age,
       })
       .status(200)
-      .json({ message: "Login successful...", un: user.username });
+      .json({ message: "Login successful..." });
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: err, message: "Failed to login!.." });
   }
 };
 export const logout = async (req, res) => {
-  res
-    .clearCookie("token")
-    .status(200)
-    .json({ message: "Logout successfully", un: user.username });
+  res.clearCookie("token").status(200).json({ message: "Logout successfully" });
 };

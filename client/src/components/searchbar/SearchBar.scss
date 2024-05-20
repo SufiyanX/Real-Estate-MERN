@@ -1,0 +1,91 @@
+@import "../../main_styles/responsive.scss";
+
+.searchBar {
+  .type {
+    @include sm {
+      margin-bottom: 5px;
+    }
+
+    button {
+      border: 1px solid #999;
+      border-bottom: none;
+      padding: 16px 36px;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
+      font-family: inherit;
+
+      &.active {
+        background-color: black;
+        color: white;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+        border-bottom: 1px solid #999;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+        border-bottom: 1px solid #999;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    border: 1px solid #999;
+    gap: 5px;
+
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+
+    input {
+      border: none;
+      padding: 0px 10px;
+      width: 200px;
+      font-family: inherit;
+
+      @include lg {
+        padding: 0px 5px;
+        width: 160px;
+      }
+
+      @include sm {
+        padding: 14px 10px;
+        width: 100%;
+        border: 1px solid #999;
+        border-radius: 5px;
+      }
+
+      //   @include md {
+      //     padding: 0px 10px;
+      //     width: auto;
+      //   }
+    }
+
+    button {
+      border: none;
+      flex: 1;
+      cursor: pointer;
+      background-color: #fece51;
+
+      @include sm {
+        padding: 10px 0px;
+        border-radius: 5px;
+      }
+    }
+
+    img {
+      height: 20px;
+      width: 20px;
+      margin: 10px;
+    }
+  }
+}

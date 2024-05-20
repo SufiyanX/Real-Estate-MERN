@@ -1,52 +1,86 @@
-.homePage {
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
+@import "../../main_styles/responsive.scss";
 
-    .imgContainer {
-        flex: 2;
-        background-color: #fcf5f3;
-        position: relative;
+.homePage {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  .imgContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 115%;
+      position: absolute;
+      right: 0;
+
+      @include lg {
+        width: 105%;
+      }
+    }
+
+    @include md {
+      display: none;
+    }
+  }
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // align-items: center;
+      gap: 50px;
+
+      @include md {
+        padding-right: 0px;
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 50px;
+
+        @include lg {
+          font-size: 38px;
+        }
+      }
+
+      .boxes {
         display: flex;
+        justify-content: space-between;
         align-items: center;
 
-        img {
-            width: 115%;
-            position: absolute;
-            right: 0;
-
+        @include sm {
+          flex-direction: column;
+          gap: 26px;
         }
-    }
 
-    .textContainer {
-        flex: 3;
-
-        .wrapper {
-            padding-right: 100px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .box {
+          @include sm {
+            display: none;
+            // display: flex;
+            // flex-direction: column;
             // align-items: center;
-            gap: 50px;
+          }
 
-            .title {
-                font-size: 50px;
+          h2 {
+            font-weight: 300;
+          }
+
+          h1 {
+            @include lg {
+              font-size: 32px;
             }
-
-            .boxes {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .box {
-                    h2 {
-                        // color: rgb(77, 74, 74);
-                        font-weight: 300;
-                    }
-                }
-            }
+          }
         }
-
+      }
     }
+  }
 }

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./navbar.scss";
 import Logo from "../../assets/icons/logo1.png";
-import MenuIcon from "../../assets/icons/menu.png";
+import MenuIcon from "../../assets/icons/list.png";
+import BackIcon from "../../assets/icons/back.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,10 +23,9 @@ function Navbar() {
         <a className="register">Sign Up</a>
         <img
           className="menuIcon"
-          src={MenuIcon}
+          src={open ? BackIcon : MenuIcon}
           onClick={() => {
             setOpen(!open);
-            console.log(open);
           }}
         />
         <div className={open ? "menu active" : "menu"}>

@@ -1,4 +1,5 @@
 @import "../../main_styles/responsive.scss";
+
 nav {
   height: 100px;
   display: flex;
@@ -7,6 +8,7 @@ nav {
 
   a {
     transition: all 0.4s ease;
+
     &:hover {
       scale: 1.05;
     }
@@ -39,6 +41,7 @@ nav {
           display: none;
         }
       }
+
       span {
         @include sm {
           display: initial;
@@ -60,6 +63,7 @@ nav {
       background-color: transparent;
     }
 
+
     .register {
       padding: 10px 20px;
       margin-right: 20px;
@@ -70,6 +74,7 @@ nav {
       display: none;
       width: 30px;
       cursor: pointer;
+
       @include sm {
         display: inline;
         z-index: 999; //bigger than 1 to show it above
@@ -84,9 +89,22 @@ nav {
       color: white;
       height: 100vh;
       width: 50%;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
 
       &.active {
         right: 0;
+      }
+
+      @include sm {
+        a {
+          display: initial;
+          font-size: 20px;
+        }
       }
     }
   }

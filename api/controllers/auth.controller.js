@@ -24,6 +24,7 @@ export const register = async (req, res) => {
     res.status(500).json({ error: err, message: "Failed to create user!.." });
   }
 };
+
 export const login = async (req, res) => {
   const { username, password } = req.body;
   try {
@@ -39,7 +40,7 @@ export const login = async (req, res) => {
       return res.status(401).json({ message: "Invalid credentials!" });
 
     //GENERATE COOKIE TOKEN AND SEND IT TO USER
-    // use Secure in production mode, because it works only in https
+
     const age = 1000 * 60 * 60 * 24 * 7; // miliseconds x seconds x minutes x hours x days = 1 week
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY, {
       expiresIn: age,
@@ -47,6 +48,7 @@ export const login = async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
+        // use Secure in production mode, because it works only in https
         // secure:true,
         maxAge: age,
       })
@@ -57,6 +59,7 @@ export const login = async (req, res) => {
     res.status(500).json({ error: err, message: "Failed to login!.." });
   }
 };
+
 export const logout = async (req, res) => {
   res.clearCookie("token").status(200).json({ message: "Logout successfully" });
 };

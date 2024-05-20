@@ -1,4 +1,5 @@
 @import "./responsive.scss";
+
 .layout {
   height: 100vh;
   max-width: 1366px;
@@ -7,13 +8,23 @@
   padding-left: 20px;
   padding-right: 20px;
 
+  //for content to be full heighted also set content flex 1 below
+  display: flex;
+  flex-direction: column;
+
   @include lg {
     max-width: 1280px;
   }
+
   @include md {
     max-width: 768px;
   }
+
   @include sm {
     max-width: 640px;
+  }
+
+  .content {
+    flex: 1;
   }
 }

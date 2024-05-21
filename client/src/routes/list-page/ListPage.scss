@@ -1,25 +1,26 @@
 .listPage {
+  display: flex;
+  height: calc(100vh - 100px); // Use full viewport height
+
+  .listContainer {
+    flex: 3;
     display: flex;
-    height: calc(100vh - 100px); // Use full viewport height
+    flex-direction: column;
+    height: 100%; // Full height for the list container
 
-    .listContainer {
-        flex: 3;
-        display: flex;
-        flex-direction: column;
-        height: 100%; // Full height for the list container
-
-        .wrapper {
-            padding-right: 50px;
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            overflow-y: auto;
-            height: 100%; // Full height for the wrapper
-        }
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      overflow-y: auto;
+      height: 100%; // Full height for the wrapper
+      padding-bottom: 50px;
     }
+  }
 
-    .mapContainer {
-        flex: 2;
-        background-color: #fcf5f3;
-    }
+  .mapContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+  }
 }

@@ -39,10 +39,14 @@ function Card({ item }) {
           </div>
           <div className="icons">
             <div className="icon">
-              <img src={SaveIcon} />
+              <tooltip title="Save">
+                <img src={SaveIcon} />
+              </tooltip>
             </div>
             <div className="icon">
-              <img src={ChatIcon} />
+              <tooltip title="chat">
+                <img src={ChatIcon} />
+              </tooltip>
             </div>
           </div>
         </div>

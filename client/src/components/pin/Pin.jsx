@@ -1,14 +1,22 @@
 import React from "react";
 import "./Pin.scss";
 import { Marker, Popup } from "react-leaflet";
+import { Link } from "react-router-dom";
 
-const position = [51.505, -0.09];
-
-function Pin() {
+function Pin({ item }) {
   return (
-    <Marker position={position}>
+    <Marker position={[item.latitude, item.longitude]}>
       <Popup>
-        A pretty CSS3 popup. <br /> Easily bkjbduiboufbusebf.
+        <div className="popupContainer">
+          <img src={item.img[0]} />
+          <div className="textContainer">
+            <Link to={`/${item.id}`}>{item.title}</Link>
+            <span className="bed">
+              {item.bedroom} {item.bedroom > 1 ? "Bedrooms" : "Bedroom"}
+            </span>
+            <b>$ {item.price} </b>
+          </div>
+        </div>
       </Popup>
     </Marker>
   );

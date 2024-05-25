@@ -5,11 +5,9 @@ import "leaflet/dist/leaflet.css";
 import Pin from "../pin/Pin";
 
 function Map({ items }) {
-  const position = [51.505, -0.09];
-
   return (
     <MapContainer
-      center={position}
+      center={[items[0].latitude, items[0].longitude]}
       zoom={7}
       scrollWheelZoom={false}
       className="map"
@@ -18,7 +16,9 @@ function Map({ items }) {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Pin item={items} />
+      {items.map((item) => (
+        <Pin key={item.id} item={item} />
+      ))}
     </MapContainer>
   );
 }

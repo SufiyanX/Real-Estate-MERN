@@ -1,12 +1,22 @@
+@import '../../main_styles/responsive.scss';
+
 .singlePage {
   display: flex;
   height: 100%;
+
+  @include md {
+    flex-direction: column;
+  }
 
   .details {
     flex: 3;
 
     .wrapper {
       padding-right: 50px;
+
+      @include sm {
+        padding-right: 0px;
+      }
 
       .info {
         margin-top: 50px;
@@ -22,6 +32,10 @@
 
             h1 {
               font-weight: 400;
+
+              @include sm {
+                font-size: 22px;
+              }
             }
 
             .address {
@@ -52,11 +66,16 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            text-align: center;
             gap: 20px;
             padding: 0px 50px;
             border-radius: 10px;
             font-weight: 600;
             background-color: rgba(254, 205, 81, 0.209);
+
+            @include sm {
+              padding: 0px 20px;
+            }
 
             img {
               height: 50px;
@@ -80,8 +99,107 @@
     flex: 2;
     background-color: #fcf5f3;
 
+    @include md {
+      margin-top: 50px;
+    }
+
     .wrapper {
-      padding: 0px 20px;
+      padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          background-color: rgba(254, 205, 81, 0.209);
+        }
+
+        span {
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+      }
+
+      .listHorizontal {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background-color: white;
+        border-radius: 10px;
+
+        @include md {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+
+      .size {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+
+
+        img {
+          background-color: rgba(254, 205, 81, 0.209);
+        }
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 200px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        button {
+          padding: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          font-family: inherit;
+          font-weight: 500;
+          background-color: white;
+          border: 1px solid #fece51;
+          border-radius: 5px;
+          cursor: pointer;
+
+          img {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
     }
   }
 }

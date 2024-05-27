@@ -4,29 +4,31 @@ export const userData = {
   img: "https://th.bing.com/th/id/OIP.XVoQB7M2RRUF5W10lPK2tAHaHa?w=570&h=570&rs=1&pid=ImgDetMain",
 };
 
-export const singlePostData = {
-  id: 1,
-  title: "Luxury Apartment with Ocean View",
-  img: [
-    "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
-    "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
-    "https://images.pexels.com/photos/242246/pexels-photo-242246.jpeg",
-    "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
-  ],
-  bedroom: 3,
-  bathroom: 2,
-  price: 3000,
-  address: "123 Seaside Blvd, Miami, FL",
-  latitude: 25.7617,
-  longitude: -80.1918,
-  size: "1500 sqft",
-  city: "Miami",
-  school: "500m",
-  bus: "300m",
-  restaurant: "200m",
-  description:
-    "This luxury apartment offers stunning ocean views, modern amenities, and spacious living areas. Perfect for those seeking a comfortable and stylish home by the sea.",
-};
+export const singlePostData = [
+  {
+    id: 1,
+    title: "Luxury Apartment with Ocean View",
+    img: [
+      "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg",
+      "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg",
+      "https://images.pexels.com/photos/242246/pexels-photo-242246.jpeg",
+      "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg",
+    ],
+    bedroom: 3,
+    bathroom: 2,
+    price: 3000,
+    address: "123 Seaside Blvd, Miami, FL",
+    latitude: 25.7617,
+    longitude: -80.1918,
+    size: "1500 sqft",
+    city: "Miami",
+    school: "500m",
+    bus: "300m",
+    restaurant: "200m",
+    description:
+      "This luxury apartment offers stunning ocean views, modern amenities, and spacious living areas. Perfect for those seeking a comfortable and stylish home by the sea.",
+  },
+];
 
 export const apartments = [
   {

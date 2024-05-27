@@ -9,6 +9,8 @@
       padding-right: 50px;
 
       .info {
+        margin-top: 50px;
+
         .top {
           display: flex;
           justify-content: space-between;
@@ -44,6 +46,7 @@
               font-weight: 300;
             }
           }
+
           .user {
             display: flex;
             flex-direction: column;
@@ -63,6 +66,7 @@
             }
           }
         }
+
         .bottom {
           margin-top: 50px;
           line-height: 20px;
@@ -71,6 +75,7 @@
       }
     }
   }
+
   .features {
     flex: 2;
     background-color: #fcf5f3;

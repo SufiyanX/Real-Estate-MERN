@@ -44,7 +44,7 @@ function Card({ item }) {
               </tooltip>
             </div>
             <div className="icon">
-              <tooltip title="chat">
+              <tooltip title="Chat">
                 <img src={ChatIcon} />
               </tooltip>
             </div>

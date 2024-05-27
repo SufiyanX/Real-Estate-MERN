@@ -24,7 +24,7 @@ function Navbar() {
       <div className="right">
         {user ? (
           <div className="user">
-            <img src="https://t4.ftcdn.net/jpg/03/26/98/51/360_F_326985142_1aaKcEjMQW6ULp6oI9MYuv8lN9f8sFmj.jpg" />
+            <img src="https://st3.depositphotos.com/1135494/36086/i/450/depositphotos_360863948-stock-photo-white-background-studio-photograph-young.jpg" />
             <span>John Doe</span>
             <Link to="/profile" className="profile">
               <div className="notification">3</div>

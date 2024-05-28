@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const user = true;
+  const user = false;
 
   return (
     <nav>
@@ -33,8 +33,12 @@ function Navbar() {
           </div>
         ) : (
           <>
-            <a>Sign In</a>
-            <a className="register">Sign Up</a>
+            <a>
+              <Link to="/login">Sign In</Link>
+            </a>
+            <a className="register">
+              <Link to="/register">Sign Up</Link>
+            </a>
           </>
         )}
         <img

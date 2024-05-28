@@ -2,15 +2,31 @@ import React from "react";
 import "./ProfilePage.scss";
 import List from "../../components/list/List";
 import Chat from "../../components/chat/Chat";
+import { useNavigate } from "react-router-dom";
+import apiRequest from "../../lib/apiRequest";
 
 function ProfilePage() {
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      const response = await apiRequest.post("/auth/logout");
+      localStorage.removeItem("user");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="profilePage">
       <div className="details">
         <div className="wrapper">
           <div className="title">
             <h1>User Info</h1>
-            <button>Update Profile</button>
+            <div>
+              <button>Update Profile</button>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
           </div>
           <div className="info">
             <img

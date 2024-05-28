@@ -39,12 +39,18 @@ export const login = async (req, res) => {
     if (!isValidPassword)
       return res.status(401).json({ message: "Invalid credentials!" });
 
-    //GENERATE COOKIE TOKEN AND SEND IT TO USER
+    // below we are destructuring passwoerd and other info as we dont wanna send password, then we will send userInfo in response
+    const { password: userPassword, ...userInfo } = user;
 
+    //GENERATE COOKIE TOKEN AND SEND IT TO USER
     const age = 1000 * 60 * 60 * 24 * 7; // miliseconds x seconds x minutes x hours x days = 1 week
-    const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET_KEY, {
-      expiresIn: age,
-    });
+    const token = jwt.sign(
+      { id: user.id, isAdmin: false },
+      process.env.JWT_SECRET_KEY,
+      {
+        expiresIn: age,
+      }
+    );
     res
       .cookie("token", token, {
         httpOnly: true,
@@ -53,7 +59,7 @@ export const login = async (req, res) => {
         maxAge: age,
       })
       .status(200)
-      .json({ message: "Login successful..." });
+      .json(userInfo);
   } catch (err) {
     console.log(err);
     res.status(500).json({ error: err, message: "Failed to login!.." });

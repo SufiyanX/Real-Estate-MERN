@@ -22,10 +22,12 @@ function Login() {
         username,
         password,
       });
+      console.log(response);
       localStorage.setItem("user", JSON.stringify(response.data));
       navigate("/");
     } catch (e) {
       setError(e.response.data.message);
+      console.log(e);
     } finally {
       setIsLoading(false);
     }

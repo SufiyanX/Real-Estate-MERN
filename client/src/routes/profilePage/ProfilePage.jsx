@@ -11,6 +11,7 @@ function ProfilePage() {
     try {
       const response = await apiRequest.post("/auth/logout");
       localStorage.removeItem("user");
+      console.log(response);
       navigate("/");
     } catch (err) {
       console.log(err);
